@@ -29,7 +29,9 @@ public class Fruit : MonoBehaviour {
     {
         if (col.tag == "Blade")
         {
-            Debug.Log("Blade Hit the Fruit");
+            //Debug.Log("Blade Hit the Fruit");
+            GameStats.fruitSliced += 1;
+            //Debug.Log(""+ GameStats.fruitSliced);
             Vector3 direction = (col.transform.position - transform.position).normalized;
 
             Quaternion rotation = Quaternion.LookRotation(direction);

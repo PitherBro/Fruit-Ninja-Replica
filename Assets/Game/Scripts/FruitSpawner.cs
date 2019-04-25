@@ -29,20 +29,9 @@ public class FruitSpawner : MonoBehaviour {
             Transform spawnPoint = spawnPoints[spawnIndex];
             
             GameObject spawnedFruit = Instantiate(fruitPrefab, spawnPoint.position, spawnPoint.rotation);
-            //randomFruitSize(ref spawnedFruit);
             Destroy(spawnedFruit, 10f);
         }
     }
-    void randomFruitSize(ref GameObject  sf) {
-        float multi = Random.Range(.5f,1.25f);
-        sf.transform.localScale = new Vector3(multi,multi,multi);
-        gameObject.transform.localScale = new Vector3(multi,multi,multi);
-        /*
-        Transform half1 = sf.transform.GetChild(0);
-        Transform half2 = sf.transform.GetChild(1);
-        half1.localScale = new Vector3(multi,multi,multi);
-        half2.localScale= new Vector3(multi,multi,multi);
-        */
-    }
+   
 	
 }
