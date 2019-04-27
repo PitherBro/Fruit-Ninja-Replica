@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 1353405809762312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.728541, y: 0.728541, z: 0.728541}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4420547642188066}
   m_Father: {fileID: 0}
@@ -126,6 +126,8 @@ MonoBehaviour:
   fruitSlicedPrefab: {fileID: 1051390302531860, guid: ca05a4d9e03cfc240aef1c9a84d3c9d6,
     type: 3}
   startForce: 13
+  soundSlice: {fileID: 6739362592703259487, guid: 2b7379d5d5419de46a11ec54348edbe9,
+    type: 3}
 --- !u!54 &1679866755241768816
 Rigidbody:
   m_ObjectHideFlags: 0
