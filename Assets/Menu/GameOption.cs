@@ -22,7 +22,9 @@ public class GameOption : Fruit
     private void OnTriggerEnter (Collider other)
     {       
         selected = true;
+        
         SliceFruit(other);
+        transform.localPosition = Vector3.zero;
     }
     public IEnumerator RunAction(Collider collider)
     {

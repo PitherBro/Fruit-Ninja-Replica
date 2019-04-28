@@ -7,12 +7,14 @@ public class Bounds : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag != "Blade")
+        if (other.tag == "Fruit")
         {
-            if (other.tag == "Sphere(Clone)" || other.tag == "Sphere_002(Clone)")
-            { Destroy(other.gameObject.gameObject); }
-            else
+            Debug.Log("Fruit Hit Bounds");
             Destroy(other.gameObject);
+            GameStats.fruitMissed += 1;
+            txtManager.setMissed();
         }
+      
+        
     }
 }

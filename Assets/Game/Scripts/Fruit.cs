@@ -23,7 +23,7 @@ public class Fruit : MonoBehaviour {
         soundSlice = GameObject.Find("Watermellon_Hit").GetComponent<AudioSource>();
         //soundSlice.clip.LoadAudioData();
         rb = GetComponent<Rigidbody>();
-        randomFruitSize(ref fruitSlicedPrefab);
+      //  randomFruitSize(ref fruitSlicedPrefab);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -38,10 +38,15 @@ public class Fruit : MonoBehaviour {
     }
     protected void SliceFruit(Collider col)
     {
-        if (col.tag == "Blade")
+        if (col.tag == "Blade" )
         {
             //Debug.Log("Blade Hit the Fruit");
-            GameStats.fruitSliced += 1;
+            if (gameObject.tag == "Fruit")
+            {
+                GameStats.fruitSliced += 1;
+                txtManager.setSliced();
+            }
+           
             //Debug.Log(""+ GameStats.fruitSliced);
             Vector3 direction = (col.transform.position - transform.position).normalized;
 
@@ -53,13 +58,9 @@ public class Fruit : MonoBehaviour {
             Destroy(slicedFruit, 3f);
             RemoveFruit();
             soundSlice.Play();
+            
         }
-        if (col.tag == "Bounds")
-        {
-            Debug.Log("Fruit Hit Bounds");
-            Destroy(gameObject);
-
-        }
+        
 
     }
 void randomFruitSize(ref GameObject sf)
